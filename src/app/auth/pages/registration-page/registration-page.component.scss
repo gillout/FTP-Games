@@ -1,0 +1,32 @@
+h1 {
+  margin: 70px auto 20px;
+}
+
+.form-card {
+  box-sizing: border-box;
+  margin: 20px auto;
+  padding: 10px 30px;
+  width: 50%;
+  box-shadow: lightgray 4px 4px 20px;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px auto;
+  width: 95%;
+}
+
+input {
+  width: 50%;
+}
+
+.action-buttons {
+  width: 100%;
+}
+
+button {
+  display: block;
+  margin: 20px auto 10px;
+}

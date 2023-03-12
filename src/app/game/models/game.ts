@@ -1,8 +1,7 @@
 export interface Game {
   id: number;
   title: string;
-  thumbnail?: string;
-  short_description?: string;
+  thumbnail: string;
   description?: string;
   genre?: string;
   platform?: string;
@@ -25,7 +24,6 @@ export const createGame = (data: any) => ({
   id: data.id,
   title: data.title,
   thumbnail: data.thumbnail,
-  short_description: data.short_description,
   description: data.description,
   genre: data.genre,
   platform: data.platform,
@@ -33,4 +31,11 @@ export const createGame = (data: any) => ({
   releaseDate: new Date(data.release_date),
   MinSystemReq: data.minimum_system_requirements,
   screenshots: data.screenshots
+} as Game);
+
+export const createGameLight = (data: any) => ({
+  id: data.id,
+  title: data.title,
+  thumbnail: data.thumbnail,
+  releaseDate: new Date(data.release_date)
 } as Game);

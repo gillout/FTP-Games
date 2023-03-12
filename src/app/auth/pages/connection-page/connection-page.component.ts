@@ -58,5 +58,4 @@ export class ConnectionPageComponent implements OnInit {
       }
     );
   }
-
 }

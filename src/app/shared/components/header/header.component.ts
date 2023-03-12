@@ -37,4 +37,8 @@ export class HeaderComponent implements OnInit {
     this.authService.logout();
   }
 
+  goToRegistration() {
+    this.router.navigate(['/registration']);
+  }
+
 }

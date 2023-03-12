@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {map, Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
-import {createGame, Game} from '../models/game';
+import {createGame, createGameLight, Game} from '../models/game';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +22,8 @@ export class GameService {
   }
 
   getAll(): Observable<Game[]> {
-    return this.httpClient.get<Game[]>(`${this.API_URL}/games`);
+    return this.httpClient.get<Game[]>(`${this.API_URL}/games`)
+      .pipe(map(datas => datas.map(data => createGameLight(data))
+    ));
   }
-
 }

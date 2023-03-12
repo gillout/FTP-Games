@@ -5,7 +5,6 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {GameModule} from './game/game.module';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
-import {RouterModule} from '@angular/router';
 import {InterceptReqInterceptor} from './core/interceptors/intercept-req.interceptor';
 import {FormsModule} from '@angular/forms';
 import {AuthModule} from "./auth/auth.module";
@@ -17,20 +16,17 @@ import {SharedModule} from "./shared/shared.module";
     AppComponent
   ],
   imports: [
-    BrowserModule,
-    GameModule,
     AppRoutingModule,
-    HttpClientModule,
-    RouterModule,
-    FormsModule,
-    AuthModule,
+    BrowserModule,
     CoreModule,
-    SharedModule
+    SharedModule,
+    AuthModule,
+    HttpClientModule,
+    FormsModule,
+    GameModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: InterceptReqInterceptor, multi: true}
-  ],
-  exports: [
   ],
   bootstrap: [AppComponent]
 })
